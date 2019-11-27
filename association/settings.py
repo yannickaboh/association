@@ -28,7 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 username = 'microfinance'
-token = 'af82819454035bdbf3ce49ff70f893ff18a96ac9'
+token = 'c084d79dd12cdff13a85e371cbe1ae9ba47d1d04'
 
 
 # Google MAP API KEY
