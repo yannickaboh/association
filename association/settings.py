@@ -27,6 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+username = 'microfinance'
+token = 'af82819454035bdbf3ce49ff70f893ff18a96ac9'
+
 
 # Google MAP API KEY
 GOOGLE_MAPS_API_KEY = 'AIzaSyDvBRw5JjebNnwQW6doJSbSJgAgpdgjs2M'
@@ -88,23 +91,23 @@ WSGI_APPLICATION = 'association.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-#DATABASES = {
-#   'default': {
-#       'ENGINE': 'django.db.backends.sqlite3',
-#       'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#   }
-#}
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'gestion',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': '',
-    }
+   'default': {
+       'ENGINE': 'django.db.backends.sqlite3',
+       'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+   }
 }
+
+#DATABASES = {
+    #'default': {
+        #'ENGINE': 'django.db.backends.mysql',
+        #'NAME': 'gestion',
+        #'USER': 'root',
+        #'PASSWORD': '',
+        #'HOST': '',
+        #'PORT': '',
+    #}
+#}
 
 
 # Password validation
