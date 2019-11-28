@@ -28,6 +28,7 @@ urlpatterns = [
     url(r'^creer_compte/$', views.CompteCreate.as_view(), name='compte_create'),
     url(r'^modifier_compte/(?P<pk>\d+)/$', views.CompteUpdate.as_view(), name='compte_update'),
     url(r'^supprimer_compte/(?P<pk>\d+)/$', views.CompteDelete.as_view(), name='compte_delete'),
+    url(r'^detail_compte/(?P<pk>\d+)/$', views.CompteDetailView.as_view(), name='detail_compte'),
 
 
 ]

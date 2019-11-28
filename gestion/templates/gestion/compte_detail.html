@@ -1,0 +1,179 @@
+{% extends 'gestion/pages/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Détail Compte{% endblock %}
+
+{% block content %}
+
+    <div class="page-content-wrapper ">
+
+                        <div class="container-fluid">
+
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="card m-b-20">
+                                        <div class="card-body">
+
+                                            <h4 class="mt-0 header-title">Compte N°/ {{ object.id }}</h4>
+
+                                            <!-- Nav tabs -->
+                                            <ul class="nav nav-tabs" role="tablist">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" data-toggle="tab" href="#home" role="tab">Infos du Compte</a>
+                                                </li>
+                                            </ul>
+
+                                            <!-- Tab panes -->
+                                            <div class="tab-content">
+                                                <div class="tab-pane active p-3" id="home" role="tabpanel">
+                                                    <div class="form-group row">
+                                                        <div class="col-lg-12">
+                                                            <label>Nature du Compte</label>
+                                                            <input class="form-control" readonly="" type="text" value="{{ object.typecompte }}">
+                                                        </div>
+                                                    </div>
+
+                                                    
+                                                    <div class="form-group row">
+                                                        <div class="col-lg-4">
+                                                            <label>Compte Général</label>
+                                                            <input class="form-control" readonly="" type="text" value="{{ object.numero }}">
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <label>Date d'Ouverture</label>
+                                                            <input class="form-control" readonly="" type="text" value="{{ object.ouverture }}">
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <label>Date de Fin</label>
+                                                            <input class="form-control" readonly="" type="text" value="{{ object.cloture }}">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group row">
+                                                        <div class="col-lg-12">
+                                                            <label>Intitulé</label>
+                                                            <input class="form-control" readonly="" type="text" value="{{ object.intitule }}">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group row">
+                                                        <div class="col-lg-6">
+                                                            <label>Statut Compte</label>
+                                                            <input class="form-control" readonly="" type="text" value="{{ object.statut }}">
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <label>Matricule Fonctionnaire</label>
+                                                            <input class="form-control" readonly="" type="text" value="{{ object.matricule }}">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group row">
+                                                        <div class="col-lg-6">
+                                                            <label>Montant Cartoné</label>
+                                                            <input class="form-control" readonly="" type="text" value="{{ object.montancartone }}">
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <label>Compte Intérêts</label>
+                                                            <input class="form-control" readonly="" type="text" value="{{ object.numcpte }}">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group row">
+                                                        <div class="col-lg-4">
+                                                            <label>Découvert Autorisé</label>
+                                                            <input class="form-control" readonly="" type="text" value="{{ object.decouvertauto }}">
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <label>Date de Début</label>
+                                                            <input class="form-control" readonly="" type="text" value="{{ object.debut }}">
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <label>Date de Fin</label>
+                                                            <input class="form-control" readonly="" type="text" value="{{ object.fin }}">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group row">
+                                                        <div class="col-lg-3">
+                                                            <label></label>
+                                                        </div>
+                                                        <div class="col-lg-3">
+                                                            <label>Débits</label>
+                                                        </div>
+                                                        <div class="col-lg-3">
+                                                            <label>Crédits</label>
+                                                        </div>
+                                                        <div class="col-lg-3">
+                                                            <label>Solde</label>
+                                                        </div>
+
+                                                        <div class="col-lg-3">
+                                                            <label>Du Jour</label>
+                                                        </div>
+                                                        <div class="col-lg-3">
+                                                            <input class="form-control" readonly="" type="text" value="">
+                                                        </div>
+                                                        <div class="col-lg-3">
+                                                            <input class="form-control" readonly="" type="text" value="">
+                                                        </div>
+                                                        <div class="col-lg-3">
+                                                            <input class="form-control" readonly="" type="text" value="">
+                                                        </div><br>
+
+                                                        <div class="col-lg-3">
+                                                            <label>Cumul</label>
+                                                        </div>
+                                                        <div class="col-lg-3"><br>
+                                                            <input class="form-control" readonly="" type="text" value="">
+                                                        </div>
+                                                        <div class="col-lg-3"><br>
+                                                            <input class="form-control" readonly="" type="text" value="">
+                                                        </div>
+                                                        <div class="col-lg-3"><br>
+                                                            <input class="form-control" readonly="" type="text" value="">
+                                                        </div>
+
+                                                    </div>
+
+
+                                                    <div class="form-group row">
+                                                        <div class="col-lg-6">
+                                                            <label>Date Dernier Dépôt</label>
+                                                            <input class="form-control" readonly="" type="text" value="{{ object.debut }}">
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <label>Date Dernier Retrait</label>
+                                                            <input class="form-control" readonly="" type="text" value="{{ object.fin }}">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div> <!-- end row -->
+
+
+
+                        </div><!-- container-fluid -->
+
+
+                    </div> <!-- Page content Wrapper -->
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+{% block title_footer %}Détail Compte{% endblock %}

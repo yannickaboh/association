@@ -99,5 +99,14 @@ class CompteDelete(DeleteView):
 	model = Compte
 	success_url = reverse_lazy('gestion:compte_list')
 
+class CompteDetailView(DetailView):
+
+    model = Compte
+    success_url = reverse_lazy('gestion:compte_list')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
+
 
 
