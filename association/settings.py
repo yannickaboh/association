@@ -10,6 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
+# pa_autoconfigure_django.py --python=3.8 https://github.com/yannickaboh/association.git --nuke
+# pip3.8 install --user pythonanywhere
+
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)

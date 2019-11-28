@@ -6,6 +6,7 @@ from django.http import JsonResponse
 from django.http import HttpResponse
 from django.views.generic import TemplateView,ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic.detail import DetailView
 from django.urls import reverse_lazy
 from django.urls import reverse
 from django.http import HttpResponseRedirect
@@ -68,6 +69,15 @@ class ClientUpdate(UpdateView):
 class ClientDelete(DeleteView):
 	model = Client
 	success_url = reverse_lazy('gestion:client_list')
+
+class ClientDetailView(DetailView):
+
+    model = Client
+    success_url = reverse_lazy('gestion:client_list')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
 
 
 

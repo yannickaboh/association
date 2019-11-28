@@ -20,6 +20,7 @@ urlpatterns = [
     url(r'^creer_client/$', views.ClientCreate.as_view(), name='client_create'),
     url(r'^modifier_client/(?P<pk>\d+)/$', views.ClientUpdate.as_view(), name='client_update'),
     url(r'^supprimer_client/(?P<pk>\d+)/$', views.ClientDelete.as_view(), name='client_delete'),
+    url(r'^detail_client/(?P<pk>\d+)/$', views.ClientDetailView.as_view(), name='detail_client'),
 
 
     # Add, Update, Delete Medicament URLS

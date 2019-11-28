@@ -50,6 +50,7 @@
                                                         <td>
                                                           <div class="btn-group" role="group" aria-label="...">
                                                             <a href="{% url 'gestion:client_update' client.id %}" class="btn btn-primary"><i class="fa fa-edit"></i></a>
+                                                            <a href="{% url 'gestion:detail_client' client.id %}" class="btn btn-warning"><i class="fa fa-eye"></i></a>
                                                             <a href="{% url 'gestion:client_delete' client.id %}" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                                                           </div>
                                                         </td>
