@@ -35,19 +35,16 @@
                             </li>
 
                             <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-buffer"></i> <span> Clients </span> </a>
+                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-buffer"></i> <span>Gestion des Clients </span> </a>
                                 <ul class="list-unstyled">
-                                    <li><a href="{% url 'gestion:client_list' %}"><i class="mdi mdi-web"></i>Personnes</a></li>
-                                    <li><a href=""><i class="mdi mdi-wan"></i>Entreprises</a></li>
+                                    <li><a href="{% url 'gestion:client_list' %}"><i class="mdi mdi-web"></i>Liste des Clients</a></li>
                                 </ul>
                             </li>
 
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-wallet"></i> <span> Comptes </span> </a>
                                 <ul class="list-unstyled">
-                                    <li><a href="#"><i class="mdi mdi-wallet-giftcard"></i>Types de Compte</a></li>
-                                    <li><a href="#"><i class="mdi mdi-wallet-membership"></i>Personnes</a></li>
-                                    <li><a href="#"><i class="mdi mdi-wallet-travel"></i>Entreprises</a></li>
+                                    <li><a href="{% url 'gestion:compte_list' %}"><i class="mdi mdi-wallet-membership"></i>Liste des Comptes</a></li>
                                 </ul>
                             </li>
 
