@@ -1,0 +1,58 @@
+{% extends 'gestion/pages/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Supprimer un Compte{% endblock %}
+
+{% block content %}
+
+    <div class="page-content-wrapper ">
+
+        <div class="container-fluid">
+
+
+            <div class="card">
+                <div class="card-body">
+
+                    <h3 class="text-center mt-0 m-b-15">
+                        <a href="" class="logo logo-admin"><!--img src="" height="54" alt="logo"--></a>
+                    </h3>
+
+                    <h4 class="text-muted text-center font-18"><b>Supprimer un Compte</b></h4>
+
+                    <form class="form-horizontal" method="POST">
+                      {% csrf_token %}
+                      <div class="box-body">
+                        <div class="form-group">
+                          <div class="col-sm-10">
+                            <p>Etes-vous sûr de vouloir supprimer <a href="#">{{ object }}</a>?</p>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /.box-body -->
+                      <div class="box-footer">
+                        <a href="{% url 'gestion:compte_list' %}" type="submit" class="btn btn-primary">Annuler et retourner vers la liste</a>
+                        <input type="submit" class="btn btn-danger pull-right" value="Supprimer">
+                      </div>
+                      <!-- /.box-footer -->
+                    </form>
+
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+{% block title_footer %}Supprimer un Client{% endblock %}

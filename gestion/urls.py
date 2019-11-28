@@ -22,4 +22,11 @@ urlpatterns = [
     url(r'^supprimer_client/(?P<pk>\d+)/$', views.ClientDelete.as_view(), name='client_delete'),
 
 
+    # Add, Update, Delete Medicament URLS
+    url(r'^comptes/$', views.CompteList.as_view(), name='compte_list'),
+    url(r'^creer_compte/$', views.CompteCreate.as_view(), name='compte_create'),
+    url(r'^modifier_compte/(?P<pk>\d+)/$', views.CompteUpdate.as_view(), name='compte_update'),
+    url(r'^supprimer_compte/(?P<pk>\d+)/$', views.CompteDelete.as_view(), name='compte_delete'),
+
+
 ]

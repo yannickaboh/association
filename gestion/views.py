@@ -10,11 +10,11 @@ from django.urls import reverse_lazy
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.forms import ModelForm
-from .forms import UserForm, ClientForm, TypeClientForm
+from .forms import UserForm, ClientForm, TypeClientForm, CompteForm
 import re
 from django.db.models import Q
 
-from .models import Client
+from .models import Client, Compte
 
 # Create your views here.
 
@@ -68,6 +68,26 @@ class ClientUpdate(UpdateView):
 class ClientDelete(DeleteView):
 	model = Client
 	success_url = reverse_lazy('gestion:client_list')
+
+
+
+# Medicament CRUD
+class CompteList(ListView):
+	model = Compte
+
+class CompteCreate(CreateView):
+	model = Compte
+	form_class = CompteForm
+	success_url = reverse_lazy('gestion:compte_list')
+
+class CompteUpdate(UpdateView):
+	model = Compte
+	form_class = CompteForm
+	success_url = reverse_lazy('gestion:compte_list')
+
+class CompteDelete(DeleteView):
+	model = Compte
+	success_url = reverse_lazy('gestion:compte_list')
 
 
 

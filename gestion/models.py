@@ -117,9 +117,22 @@ class TypeCompte(models.Model):
 
 
 class Compte(models.Model):
-	typecompte = models.ForeignKey(TypeCompte, null=True, blank=True, on_delete="cascade")
-	numero = models.CharField(max_length=250, blank=False, unique=False, verbose_name="Numéro du Compte")
-	solde = models.FloatField(blank=False, unique=False, verbose_name="Solde")
+	STATUT  =  ( 
+        ('En Activité', 'En Activité'),
+        ('En Arrêt', 'En Arrêt'),
+    )
+	typecompte = models.ForeignKey(TypeCompte, null=True, blank=True, on_delete="cascade", verbose_name="Nature du Compte")
+	numero = models.CharField(max_length=250, blank=False, unique=False, verbose_name="Numéro Général")
+	ouverture = models.DateField(blank=False, unique=False, verbose_name="Ouverture")
+	cloture = models.DateField(blank=False, unique=False, verbose_name="Clôture")
+	intitule = models.CharField(max_length=250, null=True, blank=True, verbose_name="Intitulé")
+	statut = models.CharField(max_length=130, choices=STATUT, default='En Activité', verbose_name="Statut du Compte")
+	matricule = models.CharField(max_length=250, blank=False, unique=False, verbose_name="Matricule Fonctionnaire")
+	montancartone = models.FloatField(blank=False, unique=False, verbose_name="Montant Cartoné")
+	numcpte = models.CharField(max_length=250, blank=False, unique=False, verbose_name="Compte Intérêts")
+	decouvertauto = models.FloatField(blank=False, unique=False, verbose_name="Découvert Autorisé")
+	debut = models.DateField(blank=False, unique=False, verbose_name="Début")
+	fin = models.DateField(max_length=250, blank=False, unique=False, verbose_name="Fin")
 	created_at = models.DateTimeField(auto_now_add=True, verbose_name="Date de Création")
 	updated_at = models.DateTimeField(auto_now=True, verbose_name="Date de Modification")
 	ajoute_par = models.ForeignKey(User, null=True, blank=True, editable=False, verbose_name="Ajouté par", on_delete="cascade")
