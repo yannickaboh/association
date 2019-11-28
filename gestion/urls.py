@@ -15,4 +15,11 @@ urlpatterns = [
     url(r'^déconnexion/$', views.logout_user, name='logout'),
 
 
+    # Add, Update, Delete Medicament URLS
+    url(r'^clients/$', views.ClientList.as_view(), name='client_list'),
+    url(r'^creer_client/$', views.ClientCreate.as_view(), name='client_create'),
+    url(r'^modifier_client/(?P<pk>\d+)/$', views.ClientUpdate.as_view(), name='client_update'),
+    url(r'^supprimer_client/(?P<pk>\d+)/$', views.ClientDelete.as_view(), name='client_delete'),
+
+
 ]

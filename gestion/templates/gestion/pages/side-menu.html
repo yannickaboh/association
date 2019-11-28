@@ -28,7 +28,7 @@
                     <div id="sidebar-menu">
                         <ul>
                             <li>
-                                <a href="acceuil.html" class="waves-effect">
+                                <a href="{% url 'gestion:acceuil' %}" class="waves-effect">
                                     <i class="mdi mdi-view-dashboard"></i>
                                     <span> Dashboard <span class="badge badge-primary pull-right"></span></span>
                                 </a>
@@ -37,7 +37,7 @@
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-buffer"></i> <span> Clients </span> </a>
                                 <ul class="list-unstyled">
-                                    <li><a href=""><i class="mdi mdi-web"></i>Personnes</a></li>
+                                    <li><a href="{% url 'gestion:client_list' %}"><i class="mdi mdi-web"></i>Personnes</a></li>
                                     <li><a href=""><i class="mdi mdi-wan"></i>Entreprises</a></li>
                                 </ul>
                             </li>

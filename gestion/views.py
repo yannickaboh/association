@@ -6,11 +6,15 @@ from django.http import JsonResponse
 from django.http import HttpResponse
 from django.views.generic import TemplateView,ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
+from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.forms import ModelForm
-from .forms import UserForm
+from .forms import UserForm, ClientForm, TypeClientForm
 import re
 from django.db.models import Q
+
+from .models import Client
 
 # Create your views here.
 
@@ -44,3 +48,23 @@ def logout_user(request):
 
 def acceuil(request):
 	return render(request, 'gestion/pages/acceuil.html', {})
+
+
+
+# Medicament CRUD
+class ClientList(ListView):
+	model = Client
+
+class ClientCreate(CreateView):
+	model = Client
+	form_class = ClientForm
+	success_url = reverse_lazy('gestion:client_list')
+
+class ClientUpdate(UpdateView):
+	model = Client
+	form_class = ClientForm
+	success_url = reverse_lazy('gestion:client_list')
+
+class ClientDelete(DeleteView):
+	model = Client
+	success_url = reverse_lazy('gestion:client_list')
