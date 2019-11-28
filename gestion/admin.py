@@ -22,6 +22,13 @@ class TypeClientAdmin(admin.ModelAdmin):
 
 
 admin.site.unregister(User)
+
+# Register out own model admin, based on the default UserAdmin
+@admin.register(User)
+class CustomUserAdmin(UserAdmin):
+    pass
+
+
 admin.site.register(models.TypeClient, TypeClientAdmin)
 admin.site.register(models.Client, )
 admin.site.register(models.Secteur, )

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    
+<!-- Mirrored from themesdesign.in/admiry/red/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 01 Nov 2019 13:21:30 GMT -->
+<head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>{% block title %}{% endblock %}</title>
+        <meta content="Admin Dashboard" name="description" />
+        <meta content="ThemeDesign" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <link rel="shortcut icon" href="{% static 'gestion/assets/images/favico1.ico' %}">
+
+        <!--Morris Chart CSS -->
+        <link rel="stylesheet" href="{% static 'assets/plugins/morris/morris.css' %}">
+
+        <link href="{% static 'gestion/assets/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'gestion/assets/css/icons.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'gestion/assets/css/style.css' %}" rel="stylesheet" type="text/css">
+
+    </head>
+
+
+    <body class="fixed-left">
+
+        <!-- Loader -->
+        <div id="preloader"><div id="status"><div class="spinner"></div></div></div>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            <!-- ========== Left Sidebar Start ========== -->
+            {% include 'gestion/pages/side-menu.html' %}
+            <!-- Left Sidebar End -->
+
+            <!-- Start right Content here -->
+
+            <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+
+                    <!-- Top Bar Start -->
+                    {% include 'gestion/pages/topbar.html' %}
+                    <!-- Top Bar End -->
+
+                    {% block content %}{% endblock %}
+
+                </div> <!-- content -->
+
+                <footer class="footer">
+                    © 2019 - {% block title_footer %}{% endblock %} - MicroFinance.
+                </footer>
+
+            </div>
+            <!-- End Right content here -->
+
+        </div>
+        <!-- END wrapper -->
+
+
+        <!-- jQuery  -->
+        <script src="{% static 'gestion/assets/js/jquery.min.js' %}"></script>
+        <script src="{% static 'gestion/assets/js/tether.min.js' %}"></script><!-- Tether for Bootstrap -->
+        <script src="{% static 'gestion/assets/js/popper.min.js' %}"></script>
+        <script src="{% static 'gestion/assets/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'gestion/assets/js/modernizr.min.js' %}"></script>
+        <script src="{% static 'gestion/assets/js/detect.js' %}"></script>
+        <script src="{% static 'gestion/assets/js/fastclick.js' %}"></script>
+        <script src="{% static 'gestion/assets/js/jquery.slimscroll.js' %}"></script>
+        <script src="{% static 'gestion/assets/js/jquery.blockUI.js' %}"></script>
+        <script src="{% static 'gestion/assets/js/waves.js' %}"></script>
+        <script src="{% static 'gestion/assets/js/jquery.nicescroll.js' %}"></script>
+        <script src="{% static 'gestion/assets/js/jquery.scrollTo.min.js' %}"></script>
+
+        <!--Morris Chart-->
+        <script src="{% static 'assets/plugins/morris/morris.min.js' %}"></script>
+        <script src="{% static 'assets/plugins/raphael/raphael-min.js' %}"></script>
+
+        <script src="{% static 'assets/pages/dashborad.js' %}"></script>
+
+        <!-- App js -->
+        <script src="{% static 'gestion/assets/js/app.js' %}"></script>
+
+        
+
+    </body>
+
+<!-- Mirrored from themesdesign.in/admiry/red/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 01 Nov 2019 13:21:30 GMT -->
+</html>
