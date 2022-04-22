@@ -1,5 +1,5 @@
 bootstrap-admin==0.4.3
-Django==2.2.7
+Django==2.2.28
 django-crispy-forms==1.8.1
 mysqlclient==1.4.6
 Pillow==6.2.1
